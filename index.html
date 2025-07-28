@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipping Menu</title>
+    <title>Plug Bin</title>
     <style>
         body {
             background-color: #000;
             color: #fff;
             font-family: 'Arial', sans-serif;
             padding: 20px;
+            position: relative;
+        }
+        
+        .contact-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
         }
         
         h1 {
@@ -18,6 +27,7 @@
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 3px;
+            padding-top: 40px; /* Added to accommodate contact info */
         }
         
         .menu-container {
@@ -112,9 +122,15 @@
     </style>
 </head>
 <body>
+    <div class="contact-info">
+        216-415-7522<br>
+        Instagram @morbans_
+    </div>
+    
     <h1>Plug Bin</h1>
     
     <div class="menu-container">
+        <!-- Your existing menu items here -->
         <!-- Electronics Section -->
         <div class="category-title">Electronics</div>
         
@@ -203,19 +219,16 @@
             <div class="flip-card">
                 <div class="flip-card-front">
                     <div class="item-name">Denim Tears</div>
-                    <img src="images/denimtears.jpg" alt="Silk Shirt" class="item-image">
+                    <img src="images/denimtears.jpg" alt="Denim Tears Shorts" class="item-image">
                 </div>
                 <div class="flip-card-back">
                     <div class="item-description">
-                        denim tears shorts
+                        Denim tears shorts
                     </div>
                     <div class="item-price">$129.99</div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
     </div>
 </body>
 </html>
