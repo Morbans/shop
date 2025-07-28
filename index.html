@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Card Menu</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu-item {
+            perspective: 1000px;
+            height: 250px;
+        }
+        
+        .flip-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .menu-item:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .flip-card-front {
+            background-color: #222;
+            border: 1px solid #444;
+        }
+        
+        .flip-card-back {
+            background-color: #111;
+            border: 1px solid #333;
+            transform: rotateY(180deg);
+        }
+        
+        .item-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .item-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 2px solid #555;
+        }
+        
+        .item-description {
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: #fff;
+        }
+        
+        .item-price {
+            font-size: 1.3rem;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .category-title {
+            grid-column: 1 / -1;
+            font-size: 1.8rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Restaurant Name</h1>
+    
+    <div class="menu-container">
+        <div class="category-title">Starters</div>
+        
+        <div class="menu-item">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="item-name">Bruschetta</div>
+                    <img src="https://via.placeholder.com/100" alt="Bruschetta" class="item-image">
+                </div>
+                <div class="flip-card-back">
+                    <div class="item-description">
+                        Toasted bread topped with tomatoes, garlic, and fresh basil
+                    </div>
+                    <div class="item-price">$8.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="item-name">Calamari</div>
+                    <img src="https://via.placeholder.com/100" alt="Calamari" class="item-image">
+                </div>
+                <div class="flip-card-back">
+                    <div class="item-description">
+                        Crispy fried squid served with marinara sauce and lemon wedges
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-title">Main Courses</div>
+        
+        <div class="menu-item">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="item-name">Filet Mignon</div>
+                    <img src="https://via.placeholder.com/100" alt="Filet Mignon" class="item-image">
+                </div>
+                <div class="flip-card-back">
+                    <div class="item-description">
+                        8oz tender beef filet with roasted potatoes and seasonal vegetables
+                    </div>
+                    <div class="item-price">$32.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="item-name">Salmon</div>
+                    <img src="https://via.placeholder.com/100" alt="Salmon" class="item-image">
+                </div>
+                <div class="flip-card-back">
+                    <div class="item-description">
+                        Pan-seared Atlantic salmon with lemon butter sauce and asparagus
+                    </div>
+                    <div class="item-price">$24.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-title">Desserts</div>
+        
+        <div class="menu-item">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="item-name">Chocolate Lava Cake</div>
+                    <img src="https://via.placeholder.com/100" alt="Chocolate Cake" class="item-image">
+                </div>
+                <div class="flip-card-back">
+                    <div class="item-description">
+                        Warm chocolate cake with a molten center, served with vanilla ice cream
+                    </div>
+                    <div class="item-price">$9.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
