@@ -27,7 +27,7 @@
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            padding-top: 40px; /* Added to accommodate contact info */
+            padding-top: 40px;
         }
         
         .menu-container {
@@ -40,7 +40,7 @@
         
         .menu-item {
             perspective: 1000px;
-            height: 250px;
+            height: 300px;
         }
         
         .flip-card {
@@ -78,6 +78,8 @@
             background-color: #111;
             border: 1px solid #333;
             transform: rotateY(180deg);
+            justify-content: center;
+            align-items: center;
         }
         
         .item-name {
@@ -89,26 +91,21 @@
         }
         
         .item-image {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
             margin-bottom: 15px;
-            border: 2px solid #555;
         }
         
         .item-description {
-            font-size: 0.9rem;
-            text-align: center;
-            margin-bottom: 15px;
-            line-height: 1.4;
-            color: #fff;
+            display: none; /* Hide description since we don't want it on back */
         }
         
         .item-price {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #fff;
             font-weight: bold;
+            margin-top: 10px;
         }
         
         .category-title {
@@ -118,6 +115,10 @@
             padding-bottom: 10px;
             border-bottom: 1px solid #444;
             color: #fff;
+        }
+        
+        .back-content {
+            text-align: center;
         }
     </style>
 </head>
@@ -130,21 +131,20 @@
     <h1>Plug Bin</h1>
     
     <div class="menu-container">
-        <!-- Your existing menu items here -->
         <!-- Electronics Section -->
         <div class="category-title">Electronics</div>
         
         <div class="menu-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <div class="item-name">AirPod Pro 2</div>
                     <img src="images/airpods.jpg" alt="AirPod Pro 2" class="item-image">
+                    <div class="item-name">AirPod Pro 2</div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="item-description">
-                        Premium wireless earbuds with active noise cancellation
+                    <div class="back-content">
+                        <div class="item-name">AirPod Pro 2</div>
+                        <div class="item-price">$80</div>
                     </div>
-                    <div class="item-price">$80</div>
                 </div>
             </div>
         </div>
@@ -152,14 +152,14 @@
         <div class="menu-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <div class="item-name">Air Max</div>
                     <img src="images/airmax.jpg" alt="Air Max" class="item-image">
+                    <div class="item-name">Air Max</div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="item-description">
-                        Latest model with enhanced cushioning and breathable design
+                    <div class="back-content">
+                        <div class="item-name">Air Max</div>
+                        <div class="item-price">$300</div>
                     </div>
-                    <div class="item-price">$300</div>
                 </div>
             </div>
         </div>
@@ -167,14 +167,14 @@
         <div class="menu-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <div class="item-name">iPhone 15s</div>
                     <img src="images/iphone.jpg" alt="iPhone 15s" class="item-image">
+                    <div class="item-name">iPhone 15s</div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="item-description">
-                        Latest smartphone with A16 chip and 48MP camera
+                    <div class="back-content">
+                        <div class="item-name">iPhone 15s</div>
+                        <div class="item-price">$500</div>
                     </div>
-                    <div class="item-price">$500</div>
                 </div>
             </div>
         </div>
@@ -185,14 +185,14 @@
         <div class="menu-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <div class="item-name">Moissanite Watch</div>
                     <img src="images/watch.png" alt="Moissanite Watch" class="item-image">
+                    <div class="item-name">Moissanite Watch</div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="item-description">
-                        Luxury timepiece with genuine moissanite stones
+                    <div class="back-content">
+                        <div class="item-name">Moissanite Watch</div>
+                        <div class="item-price">$599.99</div>
                     </div>
-                    <div class="item-price">$599.99</div>
                 </div>
             </div>
         </div>
@@ -203,14 +203,29 @@
         <div class="menu-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <div class="item-name">Designer Jacket</div>
                     <img src="images/jacket.jpg" alt="Designer Jacket" class="item-image">
+                    <div class="item-name">Denim Tears Hoodie</div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="item-description">
-                        Premium leather jacket with custom stitching
+                    <div class="back-content">
+                        <div class="item-name">Denim Tears Hoodie</div>
+                        <div class="item-price">$349.99</div>
                     </div>
-                    <div class="item-price">$349.99</div>
+                </div>
+            </div>
+       
+        </div>
+           <div class="menu-item">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <img src="images/lulu.jpg" alt="Lulu Jacket" class="item-image">
+                    <div class="item-name">Lulu Jacket</div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="back-content">
+                        <div class="item-name">Lulu Jacket</div>
+                        <div class="item-price">$100</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,14 +233,14 @@
         <div class="menu-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <div class="item-name">Denim Tears</div>
                     <img src="images/denimtears.jpg" alt="Denim Tears Shorts" class="item-image">
+                    <div class="item-name">Denim Tears shorts</div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="item-description">
-                        Denim tears shorts
+                    <div class="back-content">
+                        <div class="item-name">Denim Tears shorts</div>
+                        <div class="item-price">$129.99</div>
                     </div>
-                    <div class="item-price">$129.99</div>
                 </div>
             </div>
         </div>
